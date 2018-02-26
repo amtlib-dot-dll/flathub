@@ -10,7 +10,7 @@ mv package vscode-ripgrep-0.7.1-patch.0.1
 pushd vscode-ripgrep-0.7.1-patch.0.1
     yarn link
     mkdir bin
-    unzip ../misc/ripgrep-0.7.1-patch.1-linux-$(node -e 'console.log(process.arch)').zip rg -d bin/
+    unzip ../misc/ripgrep-0.7.1-patch.0-linux-$(node -e 'console.log(process.arch)').zip rg -d bin/
     chmod 755 bin/rg
 popd
 tar -xzvf yarn-mirror/vscode-1.0.1.tgz
