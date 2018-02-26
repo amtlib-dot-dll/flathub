@@ -38,6 +38,7 @@ pushd vscode
     mkdir -p node_modules/.hooks
 cat > node_modules/.hooks/install <<'EOF'
 #!/bin/sh
+echo hohohohokkkkk
 [ $npm_package_name == 'vscode-ripgrep' ] || exit 0
 echo $0
 echo ${BASH_SOURCE[0]}
