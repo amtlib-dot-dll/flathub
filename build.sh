@@ -33,9 +33,7 @@ pushd vscode
     sed -i "s/'vscode\-colorize\-tests',//" build/gulpfile.vscode.js
     sed -i "s/'vscode\-api\-tests',//" build/npm/postinstall.js
     sed -i "s/'vscode\-colorize\-tests',//" build/npm/postinstall.js
-    while true; do
-        npm_config_tarball="$(realpath ../misc/iojs-v1.7.9.tar.gz)" yarn install --offline --verbose --frozen-lockfile && break
-    done
+    npm_config_tarball="$(realpath ../misc/iojs-v1.7.9.tar.gz)" yarn install --offline --verbose --frozen-lockfile
     rm node_modules/vscode-ripgrep
     cp -r ../vscode-ripgrep-0.7.1-patch.0.1 node_modules/vscode-ripgrep
     echo "/// <reference types='@types/node'/>" > extensions/emmet/src/typings/refs.d.ts
