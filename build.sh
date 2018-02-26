@@ -35,8 +35,11 @@ pushd vscode
     sed -i "s/'vscode\-colorize\-tests',//" build/gulpfile.vscode.js
     sed -i "s/'vscode\-api\-tests',//" build/npm/postinstall.js
     sed -i "s/'vscode\-colorize\-tests',//" build/npm/postinstall.js
+    mkdir -p node_modules/.hooks/install
 cat > node_modules/.hooks/install <<'EOF'
+#!/bin/sh
 [ $npm_package_name == 'vscode-ripgrep' ] || exit 0
+echo $0
 pwd
 EOF
     while true; do
