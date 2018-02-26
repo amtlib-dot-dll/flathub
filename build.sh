@@ -40,6 +40,7 @@ cat > node_modules/.hooks/install <<'EOF'
 #!/bin/sh
 [ $npm_package_name == 'vscode-ripgrep' ] || exit 0
 echo $0
+echo ${BASH_SOURCE[0]}
 pwd
 EOF
     while true; do
