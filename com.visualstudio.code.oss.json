@@ -53,7 +53,7 @@
                 "--without-zlib"
             ],
             "cleanup": [
-                "/"
+                "*"
             ],
             "sources": [
                 {
@@ -110,7 +110,7 @@
         {
             "name": "nodejs",
             "cleanup": [
-                "/"
+                "*"
             ],
             "sources": [
                 {
