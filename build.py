@@ -150,7 +150,7 @@ for entry in json.load(open('stable')):
     ], stdout=subprocess.PIPE, universal_newlines=True, check=True, env=env).stdout.strip())
     releases.appendChild(release)
 dom.getElementsByTagName('component')[0].appendChild(releases)
-lines = dom.toprettyxml(encoding='UTF-8')
+lines = dom.toprettyxml()
 os.makedirs('/app/share/appdata')
 with open('/app/share/appdata/' + PRODUCT['darwinBundleIdentifier'] + '.appdata.xml', "w") as f:
     f.write(lines
