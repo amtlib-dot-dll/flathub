@@ -80,7 +80,7 @@ with open("build/npm/postinstall.js", "w") as f:
     for line in lines:
         f.write(line.replace("'vscode-api-tests',", '').replace("'vscode-colorize-tests',", ''))
 subprocess.run([
-    'python2',
+    '/app/bin/python2.6',
     '/app/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py',
     '--help'
 ], check=False)
