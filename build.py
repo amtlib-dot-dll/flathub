@@ -79,11 +79,6 @@ with open("build/npm/postinstall.js", "r") as f:
 with open("build/npm/postinstall.js", "w") as f:
     for line in lines:
         f.write(line.replace("'vscode-api-tests',", '').replace("'vscode-colorize-tests',", ''))
-subprocess.run([
-    '/app/bin/python2.7',
-    '/app/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py',
-    '--help'
-], check=False)
 env = os.environ.copy()
 env["npm_config_tarball"] = os.path.realpath('../misc/iojs-v1.7.9.tar.gz')
 env["npm_config_python"] = '/app/bin/python2.7'
@@ -94,7 +89,7 @@ subprocess.run([
     '--verbose',
     '--frozen-lockfile'
 ], check=True, env=env)
-shutil.rmtree('node_modules/vscode-ripgrep')
+os.unlink('node_modules/vscode-ripgrep')
 shutil.copytree('../vscode-ripgrep-0.7.1-patch.0.1', 'node_modules/vscode-ripgrep')
 with open('extensions/emmet/src/typings/refs.d.ts', 'w') as f:
     f.write("/// <reference types='@types/node'/>")
