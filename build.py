@@ -16,8 +16,8 @@ NODE_STYLE_ARCH = subprocess.run([
 ], stdout=subprocess.PIPE, universal_newlines=True, check=True).stdout.strip()
 
 shutil.move('gulp-electron-cache', '/tmp')
-shutil.move('.electron', Path.home())
-shutil.move('.bin', Path.home())
+shutil.move('.electron', str(Path.home()))
+shutil.move('.bin', str(Path.home()))
 os.chmod(str(Path.home() / '.bin' / 'yarn.js'), 0o744)
 os.symlink('yarn.js', str(Path.home() / '.bin' / 'yarn'))
 
