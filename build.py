@@ -126,7 +126,8 @@ with open('/app/share/applications/' + PRODUCT['darwinBundleIdentifier'] + '.des
                 .replace('Exec=/usr/share/@@NAME@@/@@NAME@@', 'Exec=' + PRODUCT['applicationName'])
                 .replace('@@NAME_LONG@@', PRODUCT['nameLong'])
                 .replace('@@NAME_SHORT@@', PRODUCT['nameShort'])
-                .replace('@@NAME@@', PRODUCT['applicationName']))
+                .replace('@@NAME@@', PRODUCT['applicationName'])
+                .replace('@@ICON@@', PRODUCT['darwinBundleIdentifier']))
 
 with open("vscode/resources/linux/code.appdata.xml", "r") as f:
     lines = f.read()
