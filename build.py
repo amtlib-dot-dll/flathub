@@ -136,7 +136,7 @@ env = os.environ.copy()
 env["TZ"] = 'UTC'
 env["GIT_DIR"] = 'vscode/.git'
 for entry in json.load(open('stable')):
-    if entry['version'].split('.')[0] == 0:
+    if entry['version'].split('.')[0] == '0':
         continue
     release = dom.createElement('release')
     release.setAttribute('version', entry['version'])
