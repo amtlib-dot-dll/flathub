@@ -80,13 +80,13 @@ with open("build/npm/postinstall.js", "w") as f:
     for line in lines:
         f.write(line.replace("'vscode-api-tests',", '').replace("'vscode-colorize-tests',", ''))
 subprocess.run([
-    '/app/bin/python2.6',
+    '/app/bin/python2.7',
     '/app/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py',
     '--help'
 ], check=False)
 env = os.environ.copy()
 env["npm_config_tarball"] = os.path.realpath('../misc/iojs-v1.7.9.tar.gz')
-env["npm_config_python"] = '/app/bin/python2.6'
+env["npm_config_python"] = '/app/bin/python2.7'
 subprocess.run([
     'yarn',
     'install',
