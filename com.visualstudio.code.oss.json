@@ -108,6 +108,20 @@
             ]
         },
         {
+            "name": "python",
+            "cleanup": [
+                "*"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/python/cpython.git",
+                    "tag": "v2.7.6",
+                    "commit": "278519500f6c551cc2a8035f11a81d21fae7424c"
+                }
+            ]
+        },
+        {
             "name": "nodejs",
             "cleanup": [
                 "*"
@@ -118,20 +132,6 @@
                     "url": "https://github.com/nodejs/node.git",
                     "tag": "v8.9.1",
                     "commit": "48813dee2794e2f6993b72655a8dbd3011a908ab"
-                }
-            ]
-        },
-        {
-            "name": "python",
-            "cleanup": [
-                "*"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/python/cpython.git",
-                    "tag": "2.6",
-                    "commit": "6c003210943fc91e5911bcbabe1fe4b0030cf38b"
                 }
             ]
         },
