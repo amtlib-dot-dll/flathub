@@ -86,6 +86,7 @@ subprocess.run([
 ], check=False)
 env = os.environ.copy()
 env["npm_config_tarball"] = os.path.realpath('../misc/iojs-v1.7.9.tar.gz')
+env["npm_config_python"] = '/app/bin/python2.6'
 subprocess.run([
     'yarn',
     'install',
