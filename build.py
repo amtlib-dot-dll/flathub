@@ -126,7 +126,7 @@ with open('/app/share/applications/' + PRODUCT['darwinBundleIdentifier'] + '.des
                 .replace('Exec=/usr/share/@@NAME@@/@@NAME@@', 'Exec=' + PRODUCT['applicationName'])
                 .replace('@@NAME_LONG@@', PRODUCT['nameLong'])
                 .replace('@@NAME_SHORT@@', PRODUCT['nameShort'])
-                .replace('@@NAME@@', PRODUCT['applicationName'])
+                .replace('@@NAME@@', PRODUCT['darwinBundleIdentifier'])
                 .replace('@@ICON@@', PRODUCT['darwinBundleIdentifier']))
 
 with open("vscode/resources/linux/code.appdata.xml", "r") as f:
@@ -152,7 +152,7 @@ for entry in json.load(open('stable')):
     releases.appendChild(release)
 dom.getElementsByTagName('component')[0].appendChild(releases)
 lines = dom.toprettyxml(encoding='UTF-8').decode('UTF-8')
-lines = "\n".join([line for line in lines.split("\n") if line.strip()])
+lines = "\n".join([line for line in lines.splitlines() if line.strip()])
 os.makedirs('/app/share/appdata')
 with open('/app/share/appdata/' + PRODUCT['darwinBundleIdentifier'] + '.appdata.xml', "w") as f:
     f.write(lines
