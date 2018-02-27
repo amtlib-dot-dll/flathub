@@ -102,9 +102,11 @@ os.chdir('..')
 
 shutil.move('VSCode-linux-' + NODE_STYLE_ARCH, '/app/share/' + PRODUCT['applicationName'])
 os.symlink('../share/' + PRODUCT['applicationName'] + '/bin/' + PRODUCT['applicationName'], '/app/bin/' + PRODUCT['applicationName'])
+os.makedirs('/app/share/icons/hicolor/1024x1024/apps')
 shutil.copy('vscode/resources/linux/code.png', '/app/share/icons/hicolor/1024x1024/apps/' + PRODUCT['darwinBundleIdentifier'] + '.png')
 for size in [16, 24, 32, 48, 64, 128, 192, 256, 512]:
     size = str(size)
+    os.makedirs('/app/share/icons/hicolor/' + size + 'x' + size + '/apps')
     with open('/app/share/icons/hicolor/' + size + 'x' + size + '/apps/' + PRODUCT['darwinBundleIdentifier'] + '.png', 'wb') as f:
         f.write(subprocess.run([
             'magick',
@@ -117,6 +119,7 @@ for size in [16, 24, 32, 48, 64, 128, 192, 256, 512]:
 
 with open("vscode/resources/linux/code.desktop", "r") as f:
     lines = f.readlines()
+os.makedirs('/app/share/applications')
 with open('/app/share/applications/' + PRODUCT['darwinBundleIdentifier'] + '.desktop', "w") as f:
     for line in lines:
         f.write(line
@@ -148,6 +151,7 @@ for entry in json.load(open('stable')):
     releases.appendChild(release)
 dom.getElementsByTagName('component')[0].appendChild(releases)
 lines = dom.toprettyxml(encoding='UTF-8')
+os.makedirs('/app/share/appdata')
 with open('/app/share/appdata/' + PRODUCT['darwinBundleIdentifier'] + '.appdata.xml', "w") as f:
     f.write(lines
             .replace('@@NAME_LONG@@', PRODUCT['nameLong'])
