@@ -17,7 +17,7 @@
         "--filesystem=host",
         "--persist=.vscode-oss",
         "--talk-name=org.freedesktop.Notifications",
-        "--talk-name=ca.desrt.dconf"
+        "--env=GTK_IM_MODULE=xim"
     ],
     "modules": [
         {
