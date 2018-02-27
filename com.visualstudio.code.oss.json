@@ -122,6 +122,20 @@
             ]
         },
         {
+            "name": "python",
+            "cleanup": [
+                "*"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/python/cpython.git",
+                    "tag": "2.6",
+                    "commit": "6c003210943fc91e5911bcbabe1fe4b0030cf38b"
+                }
+            ]
+        },
+        {
             "name": "vscode",
             "buildsystem": "simple",
             "build-commands": [
